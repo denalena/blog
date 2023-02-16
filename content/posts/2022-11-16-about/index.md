@@ -1,6 +1,6 @@
 ---
 title: "About"
-date: 2022-11-16 21:52:00 +0100
+date: 2022-11-16
 permalink: /about
 ---
 
