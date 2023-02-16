@@ -1,0 +1,8 @@
+baseURL: https://ledeniz.github.io/blog/
+languageCode: en-us
+title: thoughts of a deer
+theme: smol
+
+params:
+  author: Deniz Erdogan
+  subtitle: a blog is a blog is a blog is a blog
