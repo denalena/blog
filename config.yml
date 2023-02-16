@@ -6,3 +6,4 @@ theme: smol
 params:
   author: Deniz Erdogan
   subtitle: a blog is a blog is a blog is a blog
+  dateFmt: 02.01.2006
