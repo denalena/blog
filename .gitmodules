@@ -1,9 +1,3 @@
-[submodule "themes/nostyleplease"]
-	path = themes/nostyleplease
-	url = https://github.com/Masellum/hugo-theme-nostyleplease
-[submodule "themes/smigle"]
-	path = themes/smigle
-	url = https://gitlab.com/ian-s-mcb/smigle-hugo-theme
 [submodule "themes/smol"]
 	path = themes/smol
 	url = https://github.com/colorchestra/smol
