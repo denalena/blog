@@ -8,19 +8,29 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 16 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://ledeniz.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Using Hugo and GitHub Pages to blog</title>
+      <title>Running a blog with Hugo and GitHub Pages</title>
       <link>https://ledeniz.github.io/blog/posts/2023-02-16-hugo/</link>
       <pubDate>Thu, 16 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>https://ledeniz.github.io/blog/posts/2023-02-16-hugo/</guid>
-      <description>So, it has been 3 months since I started this blog and I haven&amp;rsquo;t been very active yet, but there are some posts in the pipeline I swear.
-When I started this blog, I wanted to make a post of how I set it up. Now comes is the time! Although I have to say, I kind of forgot what my pain points were back then, but I remember that I tried using GitHub Pages and Jekyll, and with both of them I wasn&amp;rsquo;t happy.</description>
+      <description>When I started this blog, I wanted to make a post of how I set it up. Now comes is the time! Although I have to say, I kind of forgot what my pain points were back then, but I remember that I tried using GitHub Pages and Jekyll, and with both of them I wasn&amp;rsquo;t happy.
+What I wanted was:
+publishing by git posts as markdown a simple way to preview posts before publishing My solution now is using Hugo, another popular static site generator written in go.</description>
+    </item>
+    
+    <item>
+      <title>Make some noise!</title>
+      <link>https://ledeniz.github.io/blog/posts/2023-02-16-noise/</link>
+      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://ledeniz.github.io/blog/posts/2023-02-16-noise/</guid>
+      <description>Whenever I&amp;rsquo;m inside and I hear rain, it&amp;rsquo;s really calming to me. Even storms manage to bring me peace. Sometimes, when I have difficulties to sleep, and it&amp;rsquo;s not coincidentally raining outside, I might turn on some noise source. There are infinite options to choose from of course: iOS has it built in, there is airplane ambient noise readily available on Spotify and YouTube, and one of my favorites is the &amp;ldquo;Rain on a Tent&amp;rdquo; preset on mynoise.</description>
     </item>
     
     <item>
       <title>Inspect return values with XDebug</title>
       <link>https://ledeniz.github.io/blog/posts/2022-11-16-xdebug/</link>
-      <pubDate>Wed, 16 Nov 2022 21:57:00 +0000</pubDate>
+      <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://ledeniz.github.io/blog/posts/2022-11-16-xdebug/</guid>
       <description>When working with a PHP codebase I really like to use XDebug as a way to find my way around and getting a grasp on what&amp;rsquo;s going on.
@@ -29,10 +39,10 @@ One thing that annoyed me a bit was that in order to inspect return values of me
     
     <item>
       <title>About</title>
-      <link>https://ledeniz.github.io/blog/posts/2022-11-16-about/</link>
-      <pubDate>Wed, 16 Nov 2022 21:52:00 +0000</pubDate>
+      <link>https://ledeniz.github.io/blog/posts/about/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://ledeniz.github.io/blog/posts/2022-11-16-about/</guid>
+      <guid>https://ledeniz.github.io/blog/posts/about/</guid>
       <description>hello world,
 my name is Deniz :D and so far I spent an uncomfortably amount of time with computers and the internet during my life and it seems like that is not likely to change anytime soon.
 In the past I had several blogs. Sometimes on blogspot, sometimes self-hosted Wordpress instances, and sometimes something entirely different. But they all have one thing in common: they are lost in the sands of time.</description>
