@@ -1,5 +1,5 @@
 ---
-title: "Using Hugo and GitHub Pages to blog"
+title: "Running a blog with Hugo and GitHub Pages"
 date: 2023-02-16 07:09:00 +0100
 ---
 
@@ -17,7 +17,7 @@ My solution now is using [Hugo](https://gohugo.io/), another popular static site
 - Set GitHub Actions as the source for GitHub Pages in the repo settings
 - Add the Hugo workflow by GitHub Actions
 
-And you're done! Now you can use `hugo` to build the site, and if you commit and push the changes, the site gets updated. Also, `hugo server` can be used to easily serve the content locally to get a feel for it. 
+And you're done! Now you can use `hugo` to build the site, and if you commit and push the changes, the site gets updated. This includes editing blog posts in GitHub directly. Also, `hugo server` can be used to easily serve the content locally to get a feel for it. 
 
 Note that your repo has to be public if you don't want to pay for using GitHub Pages. I still have to figure out some configuration and a nice theme, but this is a nice way to go forward.
 
