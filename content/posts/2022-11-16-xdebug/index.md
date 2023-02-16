@@ -1,6 +1,6 @@
 ---
 title: "Inspect return values with XDebug"
-date: 2022-11-16
+date: 2022-11-17
 ---
 
 When working with a PHP codebase I really like to use [XDebug](https://xdebug.org/) as a way to find my way around and getting a grasp on what's going on.
