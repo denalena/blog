@@ -2,6 +2,7 @@
 title: "About"
 date: 2022-11-16
 permalink: /about
+slug: about
 ---
 
 hello world,
