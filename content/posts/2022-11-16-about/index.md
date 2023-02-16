@@ -17,5 +17,5 @@ Also I think it's really fun (and helpful for self-reflection) to revisit older 
 
 bye. :)
 
-P.S. If you want to reach me (feel free!), try [email](mailto:hello@ledeniz.de) or [twitter (@diegeticdeer)](https://twitter.com/diegeticdeer).
+P.S. If you want to reach me (feel free!), try [email](mailto:hello@ledeniz.de) or [mastodon (@diegeticdeer@chaos.social)](https://chaos.social/@diegeticdeer).
 
