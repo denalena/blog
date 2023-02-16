@@ -1,6 +1,6 @@
 ---
 title: "Using Hugo and GitHub Pages to blog"
-date: 2023-02-16 00:00:00
+date: 2023-02-16 07:09:00
 ---
 
 When I started this blog, I wanted to make a post of how I set it up. Now comes is the time! Although I have to say, I kind of forgot what my pain points were back then, but I remember that I tried using GitHub Pages and Jekyll, and with both of them I wasn't happy.
