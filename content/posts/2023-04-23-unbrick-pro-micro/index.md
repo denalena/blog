@@ -24,4 +24,4 @@ I published a repository containing a small script, with the needed `avrdude` co
 
 Also, now I'm thinking about switching over again to using [PlatformIO](https://platformio.org/) instead of the Arduino IDE. But apart from the weird behavior this blog post is about, for now it still works okay enough for me and I still have some bad memories from using PlatformIO in the past.
 
-P.S. While writing this blog post I listened to [this rendition](https://github.com/blakelivingston/DuinoTune/blob/master/test_songs/twinpeaks.xrns) of the Twin Peaks theme played on that very board visible above in the photo. I don't know the show, but the tune is pretty relaxing. And it sure is satisfying to let the little board put out some chiptune magic :>
+P.S. While writing this blog post I listened to [this rendition](https://www.youtube.com/watch?v=G3baH5iTcFM) of the Twin Peaks theme played on that very board visible above in the photo. I don't know the show, but the tune is pretty relaxing. And it sure is satisfying to let the little board put out some [magic](https://github.com/blakelivingston/DuinoTune/) :>
