@@ -1,5 +1,5 @@
 ---
-title: "How to unbrick a Pro Micro clone"
+title: "How to unbrick a Pro Micro clone (fast)"
 date: 2023-04-26T19:41:29+02:00
 ---
 
