@@ -1,9 +1,9 @@
-baseURL: https://blog.ledeniz.de/
+baseURL: https://blog.denalena.de/
 languageCode: en-us
 title: thoughts of a deer
 theme: smol
 
 params:
-  author: Deniz Erdogan
+  author: dena
   subtitle: a blog is a blog is a blog is a blog
   dateFmt: 02.01.2006
