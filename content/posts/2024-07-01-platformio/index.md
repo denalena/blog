@@ -1,6 +1,6 @@
 ---
 title: Selective sketch building with PlatformIO
-date: 2024-07-02
+date: 2024-07-01
 ---
 
 I switched to use [PlatformIO](https://platformio.org/platformio-ide) again for tinkering with electronics and wanted to note down a quick little tip. Recently I tested some screen modules and I was looking for a way to keep different sketches around in the same project. The problem here is that by default the build process includes all `.cpp` files from the `src` directory, which is not what I want in this case. My goal was to find a way to specify a specific source file that should be used, and I found one: `build_src_filter` - https://docs.platformio.org/en/latest/projectconf/sections/env/options/build/build_src_filter.html#projectconf-build-src-filter
