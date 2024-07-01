@@ -7,7 +7,7 @@ slug: about
 
 hello world,
 
-my name is Deniz :D and so far I spent an uncomfortably amount of time with computers and the internet during my life and it seems like that is not likely to change anytime soon.
+my name is Dena ^__^ and so far I spent an uncomfortably amount of time with computers and the internet during my life and it seems like that is not likely to change anytime soon.
 
 In the past I had several blogs. Sometimes on blogspot, sometimes self-hosted Wordpress instances, and sometimes something entirely different. But they all have one thing in common: they are lost in the sands of time. 
 
@@ -17,5 +17,9 @@ Also I think it's really fun (and helpful for self-reflection) to revisit older 
 
 bye. :)
 
-P.S. If you want to reach me (feel free!), try [email](mailto:hello@ledeniz.de) or [mastodon (@diegeticdeer@chaos.social)](https://chaos.social/@diegeticdeer).
-
+```
+contact info
+[email]    hey@denalena.de
+[mastodon] @dena@chaos.social
+[matrix]   @dena:catgirl.cloud
+```
