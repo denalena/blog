@@ -18,7 +18,6 @@ Also I think it's really fun (and helpful for self-reflection) to revisit older 
 bye. :)
 
 ```
-contact info
 [email]    hey@denalena.de
 [mastodon] @dena@chaos.social
 [matrix]   @dena:catgirl.cloud
