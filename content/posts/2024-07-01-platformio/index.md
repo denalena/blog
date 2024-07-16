@@ -5,20 +5,6 @@ date: 2024-07-01
 
 I switched to use [PlatformIO](https://platformio.org/platformio-ide) again for tinkering with electronics and wanted to note down a quick little tip. Recently I tested some screen modules and I was looking for a way to keep different sketches around in the same project. The problem here is that by default the build process includes all **.cpp** files from the **src** directory, which is not what I want in this case. My goal was to find a way to specify a specific source file that should be used, and I found one: `build_src_filter` - https://docs.platformio.org/en/latest/projectconf/sections/env/options/build/build_src_filter.html#projectconf-build-src-filter
 
----
-intermission: I found an even better option: `src_dir`. This was the first one I tried but for some reason it didn't work back then.
-
-```
-[platformio]
-
-src_dir = examples/factory
-; src_dir = examples/TFT_eSPI_Sprite
-; src_dir = examples/lvgl_demo
-; src_dir = examples/CameraShield
-; src_dir = examples/octagon_on_amoled
-```
----
-
 As an example, this is the directory tree of one of my projects:
 
 ```
@@ -50,3 +36,16 @@ build_src_filter =
 ```
 
 The last two lines are the important ones here.
+
+---
+update: I found an even better option: `src_dir`. This was the first one I tried but for some reason it didn't work back then.
+
+```
+[platformio]
+
+src_dir = examples/factory
+; src_dir = examples/TFT_eSPI_Sprite
+; src_dir = examples/lvgl_demo
+; src_dir = examples/CameraShield
+; src_dir = examples/octagon_on_amoled
+```
