@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Inspect return values with XDebug</title>
+	
+	<meta name="author" content="dena">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	========================<br>
+	== <a href="https://blog.denalena.de/">thoughts of a deer</a> ==<br>
+	========================
+	<div style="float: right;">a blog is a blog is a blog is a blog</div><br>
+	<p>
+	<nav>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Inspect return values with XDebug</h1>
+			<b><time>17.11.2022</time></b>
+		       
+
+			<div>
+				<p>When working with a PHP codebase I really like to use <a href="https://xdebug.org/">XDebug</a> as a way to find my way around and getting a grasp on what&rsquo;s going on.</p>
+<p>One thing that annoyed me a bit was that in order to inspect return values of methods, I had to assign them to a dedicated variable.
+This doesn&rsquo;t sound like a problem, but there can be a bunch of reasons why you don&rsquo;t want to change the code for this. For example, you could trace down some behavior in a vendor package, which really shouldn&rsquo;t be touched manually.</p>
+<p>Luckily, this is a feature that <a href="https://twitter.com/derickr/status/1521889260202307586">is implemented</a> with <a href="https://bugs.xdebug.org/bug_view_page.php?bug_id=00002087">XDebug v3.2</a>!</p>
+<blockquote>
+<p>Note: you can even try it out right now if you use <a href="https://github.com/xdebug/xdebug/releases/tag/3.2.0RC2">xdebug-3.2.0RC2</a> and <a href="https://blog.jetbrains.com/phpstorm/2022/11/phpstorm-2022-3-early-access-5/#Return_value_debugging_with_Xdebug">PhpStorm 2022.3 Beta</a></p>
+</blockquote>
+<p>If the return value is a result of a method call and you just want to take a quick look at it, you can just hit <code>Step Into</code> and <code>Step Out</code> immediately again, et voila!</p>
+<p>
+<figure>
+  <img src="xdebug.png" alt="A screenshot of inspecting the return value of last method call in PHPStorm" />
+</figure>
+
+
+</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/2025-02-05-platformio/">Dedicated VSCode config for PlatformIO</a></li>
+				
+				<li><a href="/posts/2024-07-05-usb-boot-selector/">USB boot selector</a></li>
+				
+				<li><a href="/posts/2024-07-01-platformio/">Selective sketch building with PlatformIO</a></li>
+				
+				<li><a href="/posts/2023-04-23-unbrick-pro-micro/">How to unbrick a Pro Micro clone (fast)</a></li>
+				
+				<li><a href="/posts/2023-02-16-hugo/">Running a blog with Hugo and GitHub Pages</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2025 <a href="https://blog.denalena.de/"><b>thoughts of a deer</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

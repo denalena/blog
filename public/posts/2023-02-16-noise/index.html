@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Make some noise!</title>
+	
+	<meta name="author" content="dena">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	========================<br>
+	== <a href="https://blog.denalena.de/">thoughts of a deer</a> ==<br>
+	========================
+	<div style="float: right;">a blog is a blog is a blog is a blog</div><br>
+	<p>
+	<nav>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Make some noise!</h1>
+			<b><time>18.01.2023</time></b>
+		       
+
+			<div>
+				<p>Whenever I&rsquo;m inside and I hear rain, it&rsquo;s really calming to me. Even storms manage to bring me peace. Sometimes, when I have difficulties to sleep, and it&rsquo;s not coincidentally raining outside, I might turn on some noise source. There are infinite options to choose from of course: iOS has it built in, there is airplane ambient noise readily available on Spotify and YouTube, and one of my favorites is the &ldquo;Rain on a Tent&rdquo; preset on <a href="https://mynoise.net/NoiseMachines/campingRainNoiseGenerator.php">mynoise.net</a>. </p>
+<p>On the other hand, during the day I noticed that the microphone of one of my co-workers has quite the high noise floor, and every time they unmute themselves in a call, I immediately start feeling a little more comfy because of that noise. Not long after that, I saw <a href="https://www.washingtonpost.com/wellness/2022/11/14/brown-noise-adhd-focus/">an article</a> floating around <a href="https://news.ycombinator.com/item?id=33685567#33690209">on HN</a> about how listening to the low rumble brown noise could help calming the mind.</p>
+<p>In a nutshell, brown noise is static noise where you mostly hear the lower frequencies, I recommend reading the article to learn more about it.</p>
+<blockquote>
+<p>&ldquo;I just feel like my brain is being hugged&rdquo;</p>
+</blockquote>
+<p>That article was a nice read, but as usual on HN, the real treasure is found in the comments. And I wasn&rsquo;t disappointed this time as well, something piqued my interest: a discussion emerged about how people like to play noise <a href="https://news.ycombinator.com/item?id=33687737">from their command line</a>.</p>
+<blockquote>
+<p>&ldquo;This also helps cover up constant early morning construction and traffic. If I can help it I just use: play -n synth brown on any linux system with sox installed&hellip; it&rsquo;s definitely the cleanest sound I&rsquo;ve found.&rdquo;</p>
+</blockquote>
+<p>And this was quite the revelation to me. I really like to speed up my workflows because it minimizes the chance that I get distracted, and being able to fire up some concentrating noise in a quick way is really valuable to me. Also I really like that it&rsquo;s generated on the fly. So I listened to the different presets that people created and gathered the ones that sound the nicest to me, and here they are:</p>
+<pre tabindex="0"><code>play -n -c 5 synth brown vol -17dB
+        
+play -n -n --combine merge synth brownnoise band -n 550 550 vol -17dB
+        
+play -n -n --combine merge synth &#39;24:00:00&#39; brownnoise band -n 750 750 tremolo 50 1 vol -17dB
+        
+play -c 2 --null synth brownnoise reverb bass 6 treble -3
+        
+play -c 2 --null synth brownnoise reverb bass 10 treble -6
+
+play -n -n --combine merge synth brownnoise band -n 550 550 tremolo 50 1 vol -17dB reverb bass 10 treble -6
+
+play -n -n --combine merge synth brownnoise band -n 150 150 tremolo 50 1 reverb bass 10 treble -6
+</code></pre><p>Note that I added <code>vol -17dB</code> to almost all of them to make them a bit quieter by default. It&rsquo;s quite fun to experiment with the different options available and to find comfy settings for oneself. I usually go with the last one, and have it readily available in a <code>noise.sh</code> that is in a directory from my <code>$PATH</code>. Also, I bound it to the keystroke <code>ctrl+n</code> via my <code>.inputrc</code>.</p>
+<p>I find myself to run this quite frequently now during work and I&rsquo;m really thankful for finding out about it, so here I am, spreading the noise.</p>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/2025-02-05-platformio/">Dedicated VSCode config for PlatformIO</a></li>
+				
+				<li><a href="/posts/2024-07-05-usb-boot-selector/">USB boot selector</a></li>
+				
+				<li><a href="/posts/2024-07-01-platformio/">Selective sketch building with PlatformIO</a></li>
+				
+				<li><a href="/posts/2023-04-23-unbrick-pro-micro/">How to unbrick a Pro Micro clone (fast)</a></li>
+				
+				<li><a href="/posts/2023-02-16-hugo/">Running a blog with Hugo and GitHub Pages</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2025 <a href="https://blog.denalena.de/"><b>thoughts of a deer</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

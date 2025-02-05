@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>USB boot selector</title>
+	
+	<meta name="author" content="dena">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	========================<br>
+	== <a href="https://blog.denalena.de/">thoughts of a deer</a> ==<br>
+	========================
+	<div style="float: right;">a blog is a blog is a blog is a blog</div><br>
+	<p>
+	<nav>
+			
+</header>
+
+	
+	<main>
+		<article>
+			<h1>USB boot selector</h1>
+			<b><time>05.07.2024</time></b>
+		       
+
+			<div>
+				<p>I use a laptop that I dual boot with Ubuntu and Windows[1]. It takes a surprisingly long time from power button press to GRUB menu, so I often press it and do immediately other things (thanks ADHD). It is only a slight inconvenience but recently one morning I literally woke up and thought to myself: wouldn&rsquo;t it be neat to have some kind of hardware switch to select which OS I want to boot? At first I thought about using one of those microcontroller devboards that you can directly plug into a USB port and adding some kind of toggle switch to it. But then I went an even simpler route: using two different USB drives and booting one or the other OS depending on which drive is plugged in.</p>
+<p>
+<figure>
+  <img src="usbkey.png" alt="A photo of the two small usb drives on a keychain ring, one of them is plugged in" />
+</figure>
+
+
+</p>
+<blockquote>
+<p>sorry Windows, you only get silver.</p>
+</blockquote>
+<p>GRUB supports extensive <a href="https://help.ubuntu.com/community/Grub2/CustomMenus">menu customization</a> via scripts, and that is what I did. I formatted both drives to FAT32 and gave each filesystem a label, which gets used to identify which drive is plugged in. Below is the finished script - if one of the drives is found then we skip the menu by setting the time we have to select an entry to 0 and setting the corresponding menu entry as the default one. If no drive with the right label is found we get dropped into the menu as usual and have 10 seconds to decide what to do. It would be kind of fun to not display the menu altogether, essentially letting the drives act as some sort of keys to the machine. But since it would not increase security and would be more like a party trick that probably no one will ever see, I rather have the option to boot without a magical USB drive.</p>
+<p>[1] which is it&rsquo;s own little adventure if you want to use LUKS: <a href="https://askubuntu.com/a/293029">https://askubuntu.com/a/293029</a></p>
+<p><code>/etc/grub.d/40_custom</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>exec tail -n +3 $0
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># This file provides an easy way to add custom menu entries.  Simply type the</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># menu entries you want to add after this comment.  Be careful not to change</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># the &#39;exec tail&#39; line above.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>insmod search_label
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>search --no-floppy --label <span style="color:#e6db74">&#34;LINUX&#34;</span>   --set usb_device_gold
+</span></span><span style="display:flex;"><span>search --no-floppy --label <span style="color:#e6db74">&#34;WINDOWS&#34;</span> --set usb_device_silver
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>set timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$usb_device_gold<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        set default<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#75715e"># ubuntu</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> -n <span style="color:#e6db74">&#34;</span>$usb_device_silver<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        set default<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#75715e"># windows</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    set timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>    set default<span style="color:#f92672">=</span>saved
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Save the configuration and update GRUB</span>
+</span></span><span style="display:flex;"><span>save_env default
+</span></span></code></pre></div>
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="/posts/2025-02-05-platformio/">Dedicated VSCode config for PlatformIO</a></li>
+				
+				<li><a href="/posts/2024-07-05-usb-boot-selector/">USB boot selector</a></li>
+				
+				<li><a href="/posts/2024-07-01-platformio/">Selective sketch building with PlatformIO</a></li>
+				
+				<li><a href="/posts/2023-04-23-unbrick-pro-micro/">How to unbrick a Pro Micro clone (fast)</a></li>
+				
+				<li><a href="/posts/2023-02-16-hugo/">Running a blog with Hugo and GitHub Pages</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2025 <a href="https://blog.denalena.de/"><b>thoughts of a deer</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

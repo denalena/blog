@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>thoughts of a deer</title>
+    <link>https://blog.denalena.de/</link>
+    <description>Recent content on thoughts of a deer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.denalena.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dedicated VSCode config for PlatformIO</title>
+      <link>https://blog.denalena.de/posts/2025-02-05-platformio/</link>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.denalena.de/posts/2025-02-05-platformio/</guid>
+      <description>One thing I don&amp;rsquo;t like about PlatformIO: it&amp;rsquo;s quite bloaty.&#xA;And that&amp;rsquo;s alright because this is a tradeoff for the conveniences you get, but I really only want the extension running when I work on some code that I want to build/flash/debug etc.&#xA;Today I found a nice solution to this problem: you can start a completely separated Visual Studio Code instance, that you can dedicate to PlatformIO (or any other set of extensions/themes/settings/etc, really).</description>
+    </item>
+    <item>
+      <title>USB boot selector</title>
+      <link>https://blog.denalena.de/posts/2024-07-05-usb-boot-selector/</link>
+      <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.denalena.de/posts/2024-07-05-usb-boot-selector/</guid>
+      <description>I use a laptop that I dual boot with Ubuntu and Windows[1]. It takes a surprisingly long time from power button press to GRUB menu, so I often press it and do immediately other things (thanks ADHD). It is only a slight inconvenience but recently one morning I literally woke up and thought to myself: wouldn&amp;rsquo;t it be neat to have some kind of hardware switch to select which OS I want to boot?</description>
+    </item>
+    <item>
+      <title>Selective sketch building with PlatformIO</title>
+      <link>https://blog.denalena.de/posts/2024-07-01-platformio/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.denalena.de/posts/2024-07-01-platformio/</guid>
+      <description>I switched to use PlatformIO again for tinkering with electronics and wanted to note down a quick little tip. Recently I tested some screen modules and I was looking for a way to keep different sketches around in the same project. The problem here is that by default the build process includes all .cpp files from the src directory, which is not what I want in this case. My goal was to find a way to specify a specific source file that should be used, and I found one: build_src_filter - https://docs.</description>
+    </item>
+    <item>
+      <title>How to unbrick a Pro Micro clone (fast)</title>
+      <link>https://blog.denalena.de/posts/2023-04-23-unbrick-pro-micro/</link>
+      <pubDate>Wed, 26 Apr 2023 19:41:29 +0200</pubDate>
+      <guid>https://blog.denalena.de/posts/2023-04-23-unbrick-pro-micro/</guid>
+      <description>Recently I&amp;rsquo;ve been getting back a bit dabbling around with electronics. Currently I specifically like to use the Sparkfun ProMicro, because of it&amp;rsquo;s on-board USB capabilities (more on that in a future blog post).&#xA;(yeah, it&amp;rsquo;s a cheap clone I got from aliexpress)&#xA;While setting up my Arduino IDE and playing around with it, I noticed that there are several ways that you can end up in a situation that makes it difficult to flash a new sketch to the board.</description>
+    </item>
+    <item>
+      <title>Running a blog with Hugo and GitHub Pages</title>
+      <link>https://blog.denalena.de/posts/2023-02-16-hugo/</link>
+      <pubDate>Thu, 16 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.denalena.de/posts/2023-02-16-hugo/</guid>
+      <description>note: the source repository of this blog can be found at https://github.com/denalena/blog/&#xA;When I started this blog, I wanted to make a post of how I set it up. The time has come! Although I have to say, I kind of forgot what my pain points were initially, but I remember that I tried using &amp;ldquo;pure&amp;rdquo; GitHub Pages and Jekyll, and with both of them I wasn&amp;rsquo;t happy.&#xA;What I wanted was:</description>
+    </item>
+    <item>
+      <title>Make some noise!</title>
+      <link>https://blog.denalena.de/posts/2023-02-16-noise/</link>
+      <pubDate>Wed, 18 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.denalena.de/posts/2023-02-16-noise/</guid>
+      <description>Whenever I&amp;rsquo;m inside and I hear rain, it&amp;rsquo;s really calming to me. Even storms manage to bring me peace. Sometimes, when I have difficulties to sleep, and it&amp;rsquo;s not coincidentally raining outside, I might turn on some noise source. There are infinite options to choose from of course: iOS has it built in, there is airplane ambient noise readily available on Spotify and YouTube, and one of my favorites is the &amp;ldquo;Rain on a Tent&amp;rdquo; preset on mynoise.</description>
+    </item>
+    <item>
+      <title>Inspect return values with XDebug</title>
+      <link>https://blog.denalena.de/posts/2022-11-16-xdebug/</link>
+      <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.denalena.de/posts/2022-11-16-xdebug/</guid>
+      <description>When working with a PHP codebase I really like to use XDebug as a way to find my way around and getting a grasp on what&amp;rsquo;s going on.&#xA;One thing that annoyed me a bit was that in order to inspect return values of methods, I had to assign them to a dedicated variable. This doesn&amp;rsquo;t sound like a problem, but there can be a bunch of reasons why you don&amp;rsquo;t want to change the code for this.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://blog.denalena.de/posts/about/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.denalena.de/posts/about/</guid>
+      <description>hello world,&#xA;my name is Dena ^__^ and so far I spent an uncomfortably amount of time with computers and the internet during my life and it seems like that is not likely to change anytime soon.&#xA;In the past I had several blogs. Sometimes on blogspot, sometimes self-hosted Wordpress instances, and sometimes something entirely different. But they all have one thing in common: they are lost in the sands of time.</description>
+    </item>
+  </channel>
+</rss>
