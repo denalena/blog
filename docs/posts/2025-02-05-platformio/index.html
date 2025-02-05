@@ -1,40 +1,5 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Dedicated VSCode config for PlatformIO</title>
-	
-	<meta name="author" content="dena">
-	<link rel="stylesheet" href="/css/style.css">
-	
-	
-</head>
-<body>
-	<header>
-	========================<br>
-	== <a href="https://blog.denalena.de/">thoughts of a deer</a> ==<br>
-	========================
-	<div style="float: right;">a blog is a blog is a blog is a blog</div><br>
-	<p>
-	<nav>
-			
-</header>
-
-	
-	<main>
-		<article>
-			<h1>Dedicated VSCode config for PlatformIO</h1>
-			<b><time>05.02.2025</time></b>
-		       
-
-			<div>
-				<p>One thing I don&rsquo;t like about PlatformIO: it&rsquo;s quite bloaty.</p>
-<p>And that&rsquo;s alright because this is a tradeoff for the conveniences you get, but I really only want the extension running when I work on some code that I want to build/flash/debug etc.</p>
-<p>Today I found a nice solution to this problem: you can start a completely separated Visual Studio Code instance, that you can dedicate to PlatformIO (or any other set of extensions/themes/settings/etc, really).</p>
-<pre tabindex="0"><code>$ code --help
+<!doctype html><html lang=en-us><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="IE=edge"><style type=text/css>body{font-family:monospace}</style><title>Dedicated VSCode config for PlatformIO</title>
+<meta name=author content="dena"><link rel=stylesheet href=/css/style.css></head><body><header>========================<br>== <a href=https://blog.denalena.de/>thoughts of a deer</a> ==<br>========================<div style=float:right>a blog is a blog is a blog is a blog</div><br><p><nav></header><main><article><h1>Dedicated VSCode config for PlatformIO</h1><b><time>05.02.2025</time></b><div><p>One thing I don&rsquo;t like about PlatformIO: it&rsquo;s quite bloaty.</p><p>And that&rsquo;s alright because this is a tradeoff for the conveniences you get, but I really only want the extension running when I work on some code that I want to build/flash/debug etc.</p><p>Today I found a nice solution to this problem: you can start a completely separated Visual Studio Code instance, that you can dedicate to PlatformIO (or any other set of extensions/themes/settings/etc, really).</p><pre tabindex=0><code>$ code --help
 ...
   --user-data-dir &lt;dir&gt;             Specifies the directory that user
                                     data is kept in. Can be used to
@@ -42,24 +7,7 @@
                                     of Code.
 ...
  --extensions-dir &lt;dir&gt;             Set the root path for extensions.
-</code></pre><p>
-<figure>
-  <img src="tux.jpg" alt="Crafted ubuntu screenshot showing desktop file integration and two vscode instances side-by-side, with different themes and different extensions" />
-</figure>
-
-
-</p>
-<p>So I created some nice desktop integrated shortcuts to make this convenient to launch. It seems vscode goes ahead and creates the directories you specify, I just use <code>user-data</code> and <code>ext-data</code> in a directory called <code>platformio-vscode</code> in my home directory. Obviously you have to adjust the filesystem paths in case you copy some of my config down below.</p>
-<h2 id="linux">Linux</h2>
-<p>I installed vscode via snap so I basically copied <code>/var/lib/snapd/desktop/applications/code_code.desktop</code>, changed it a little bit and put it into <code>~/.local/share/applications/</code>. I also like to add icons for these, so I downloaded the PlatformIO logo as a png file into <code>~/.icons/</code>.</p>
-<blockquote>
-<p>(<a href="icon.png">link to PlatformIO png logo</a>)</p>
-</blockquote>
-<blockquote>
-<p>note: the <code>.desktop</code> files need to be set executable - <code>chmod +x</code> will do the trick</p>
-</blockquote>
-<p>You could slim down this file much more but this works for me:</p>
-<pre tabindex="0"><code>[Desktop Entry]
+</code></pre><p><figure><img src=tux.jpg alt="Crafted ubuntu screenshot showing desktop file integration and two vscode instances side-by-side, with different themes and different extensions"></figure></p><p>So I created some nice desktop integrated shortcuts to make this convenient to launch. It seems vscode goes ahead and creates the directories you specify, I just use <code>user-data</code> and <code>ext-data</code> in a directory called <code>platformio-vscode</code> in my home directory. Obviously you have to adjust the filesystem paths in case you copy some of my config down below.</p><h2 id=linux>Linux</h2><p>I installed vscode via snap so I basically copied <code>/var/lib/snapd/desktop/applications/code_code.desktop</code>, changed it a little bit and put it into <code>~/.local/share/applications/</code>. I also like to add icons for these, so I downloaded the PlatformIO logo as a png file into <code>~/.icons/</code>.</p><blockquote><p>(<a href=icon.png>link to PlatformIO png logo</a>)</p></blockquote><blockquote><p>note: the <code>.desktop</code> files need to be set executable - <code>chmod +x</code> will do the trick</p></blockquote><p>You could slim down this file much more but this works for me:</p><pre tabindex=0><code>[Desktop Entry]
 X-SnapInstanceName=code-platformio
 Name=PlatformIO
 Comment=PlatformIO with VSCode
@@ -72,48 +20,5 @@ StartupWMClass=PlatformIO
 Categories=TextEditor;Development;IDE;
 MimeType=application/x-code-workspace;
 Keywords=vscode;platformio;
-</code></pre><h2 id="windows">Windows</h2>
-<ul>
-<li>search for &ldquo;vscode&rdquo; in start menu, right-click the link and choose &ldquo;Open file location&rdquo;</li>
-<li>copy the <code>Visual Studio Code.lnk</code> shortcut file</li>
-<li>right-click the copy, open <code>Properties</code> and add the command line options in the <code>Target</code> section:</li>
-</ul>
-<pre tabindex="0"><code>&#34;C:\Users\dena\AppData\Local\Programs\Microsoft VS Code\Code.exe&#34; --user-data-dir C:\Users\dena\platformio-vscode\user-data --extensions-dir C:\Users\dena\platformio-vscode\ext-data
-</code></pre><blockquote>
-<p>(<a href="platformio.ico">link to PlatformIO .ico logo</a>)</p>
-</blockquote>
-
-			</div>
-		</article>
-	</main>
-<aside>
-	<div>
-		<div>
-			<h3>LATEST POSTS</h3>
-		</div>
-		<div>
-			<ul>
-				
-				<li><a href="/posts/2025-02-05-platformio/">Dedicated VSCode config for PlatformIO</a></li>
-				
-				<li><a href="/posts/2024-07-05-usb-boot-selector/">USB boot selector</a></li>
-				
-				<li><a href="/posts/2024-07-01-platformio/">Selective sketch building with PlatformIO</a></li>
-				
-				<li><a href="/posts/2023-04-23-unbrick-pro-micro/">How to unbrick a Pro Micro clone (fast)</a></li>
-				
-				<li><a href="/posts/2023-02-16-hugo/">Running a blog with Hugo and GitHub Pages</a></li>
-				
-			</ul>
-		</div>
-	</div>
-</aside>
-
-
-	<footer>
-	<p>&copy; 2025 <a href="https://blog.denalena.de/"><b>thoughts of a deer</b></a>.
-	</p>
-</footer>
-
-</body>
-</html>
+</code></pre><h2 id=windows>Windows</h2><ul><li>search for &ldquo;vscode&rdquo; in start menu, right-click the link and choose &ldquo;Open file location&rdquo;</li><li>copy the <code>Visual Studio Code.lnk</code> shortcut file</li><li>right-click the copy, open <code>Properties</code> and add the command line options in the <code>Target</code> section:</li></ul><pre tabindex=0><code>&#34;C:\Users\dena\AppData\Local\Programs\Microsoft VS Code\Code.exe&#34; --user-data-dir C:\Users\dena\platformio-vscode\user-data --extensions-dir C:\Users\dena\platformio-vscode\ext-data
+</code></pre><blockquote><p>(<a href=platformio.ico>link to PlatformIO .ico logo</a>)</p></blockquote></div></article></main><aside><div><div><h3>LATEST POSTS</h3></div><div><ul><li><a href=/posts/2025-02-05-platformio/>Dedicated VSCode config for PlatformIO</a></li><li><a href=/posts/2024-07-05-usb-boot-selector/>USB boot selector</a></li><li><a href=/posts/2024-07-01-platformio/>Selective sketch building with PlatformIO</a></li><li><a href=/posts/2023-04-23-unbrick-pro-micro/>How to unbrick a Pro Micro clone (fast)</a></li><li><a href=/posts/2023-02-16-hugo/>Running a blog with Hugo and GitHub Pages</a></li></ul></div></div></aside><footer><p>&copy; 2025 <a href=https://blog.denalena.de/><b>thoughts of a deer</b></a>.</p></footer></body></html>

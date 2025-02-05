@@ -1,39 +1,5 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Selective sketch building with PlatformIO</title>
-	
-	<meta name="author" content="dena">
-	<link rel="stylesheet" href="/css/style.css">
-	
-	
-</head>
-<body>
-	<header>
-	========================<br>
-	== <a href="https://blog.denalena.de/">thoughts of a deer</a> ==<br>
-	========================
-	<div style="float: right;">a blog is a blog is a blog is a blog</div><br>
-	<p>
-	<nav>
-			
-</header>
-
-	
-	<main>
-		<article>
-			<h1>Selective sketch building with PlatformIO</h1>
-			<b><time>01.07.2024</time></b>
-		       
-
-			<div>
-				<p>I switched to use <a href="https://platformio.org/platformio-ide">PlatformIO</a> again for tinkering with electronics and wanted to note down a quick little tip. Recently I tested some screen modules and I was looking for a way to keep different sketches around in the same project. The problem here is that by default the build process includes all <strong>.cpp</strong> files from the <strong>src</strong> directory, which is not what I want in this case. My goal was to find a way to specify a specific source file that should be used, and I found one: <code>build_src_filter</code> - <a href="https://docs.platformio.org/en/latest/projectconf/sections/env/options/build/build_src_filter.html#projectconf-build-src-filter">https://docs.platformio.org/en/latest/projectconf/sections/env/options/build/build_src_filter.html#projectconf-build-src-filter</a></p>
-<p>As an example, this is the directory tree of one of my projects:</p>
-<pre tabindex="0"><code>.
+<!doctype html><html lang=en-us><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="IE=edge"><style type=text/css>body{font-family:monospace}</style><title>Selective sketch building with PlatformIO</title>
+<meta name=author content="dena"><link rel=stylesheet href=/css/style.css></head><body><header>========================<br>== <a href=https://blog.denalena.de/>thoughts of a deer</a> ==<br>========================<div style=float:right>a blog is a blog is a blog is a blog</div><br><p><nav></header><main><article><h1>Selective sketch building with PlatformIO</h1><b><time>01.07.2024</time></b><div><p>I switched to use <a href=https://platformio.org/platformio-ide>PlatformIO</a> again for tinkering with electronics and wanted to note down a quick little tip. Recently I tested some screen modules and I was looking for a way to keep different sketches around in the same project. The problem here is that by default the build process includes all <strong>.cpp</strong> files from the <strong>src</strong> directory, which is not what I want in this case. My goal was to find a way to specify a specific source file that should be used, and I found one: <code>build_src_filter</code> - <a href=https://docs.platformio.org/en/latest/projectconf/sections/env/options/build/build_src_filter.html#projectconf-build-src-filter>https://docs.platformio.org/en/latest/projectconf/sections/env/options/build/build_src_filter.html#projectconf-build-src-filter</a></p><p>As an example, this is the directory tree of one of my projects:</p><pre tabindex=0><code>.
 ├── include
 │   └── README
 ├── lib
@@ -46,56 +12,18 @@
 │       └── main.cpp
 └── test
     └── README
-</code></pre><p>In this case I only want to use the <strong>main.cpp</strong> in <strong>test_a</strong>, so my <strong>platformio.ini</strong> looks like this:</p>
-<pre tabindex="0"><code>[env:lolin_s2_mini]
+</code></pre><p>In this case I only want to use the <strong>main.cpp</strong> in <strong>test_a</strong>, so my <strong>platformio.ini</strong> looks like this:</p><pre tabindex=0><code>[env:lolin_s2_mini]
 platform = espressif32
 board = lolin_s2_mini
 framework = arduino
 lib_deps = bodmer/TFT_eSPI@^2.5.43
 build_src_filter =
   +&lt;test_a/*.cpp&gt;
-</code></pre><p>The last two lines are the important ones here.</p>
-<hr>
-<p>update: I found an even better option: <code>src_dir</code>. This was the first one I tried but for some reason it didn&rsquo;t work back then.</p>
-<pre tabindex="0"><code>[platformio]
+</code></pre><p>The last two lines are the important ones here.</p><hr><p>update: I found an even better option: <code>src_dir</code>. This was the first one I tried but for some reason it didn&rsquo;t work back then.</p><pre tabindex=0><code>[platformio]
 
 src_dir = examples/factory
 ; src_dir = examples/TFT_eSPI_Sprite
 ; src_dir = examples/lvgl_demo
 ; src_dir = examples/CameraShield
 ; src_dir = examples/octagon_on_amoled
-</code></pre>
-			</div>
-		</article>
-	</main>
-<aside>
-	<div>
-		<div>
-			<h3>LATEST POSTS</h3>
-		</div>
-		<div>
-			<ul>
-				
-				<li><a href="/posts/2025-02-05-platformio/">Dedicated VSCode config for PlatformIO</a></li>
-				
-				<li><a href="/posts/2024-07-05-usb-boot-selector/">USB boot selector</a></li>
-				
-				<li><a href="/posts/2024-07-01-platformio/">Selective sketch building with PlatformIO</a></li>
-				
-				<li><a href="/posts/2023-04-23-unbrick-pro-micro/">How to unbrick a Pro Micro clone (fast)</a></li>
-				
-				<li><a href="/posts/2023-02-16-hugo/">Running a blog with Hugo and GitHub Pages</a></li>
-				
-			</ul>
-		</div>
-	</div>
-</aside>
-
-
-	<footer>
-	<p>&copy; 2025 <a href="https://blog.denalena.de/"><b>thoughts of a deer</b></a>.
-	</p>
-</footer>
-
-</body>
-</html>
+</code></pre></div></article></main><aside><div><div><h3>LATEST POSTS</h3></div><div><ul><li><a href=/posts/2025-02-05-platformio/>Dedicated VSCode config for PlatformIO</a></li><li><a href=/posts/2024-07-05-usb-boot-selector/>USB boot selector</a></li><li><a href=/posts/2024-07-01-platformio/>Selective sketch building with PlatformIO</a></li><li><a href=/posts/2023-04-23-unbrick-pro-micro/>How to unbrick a Pro Micro clone (fast)</a></li><li><a href=/posts/2023-02-16-hugo/>Running a blog with Hugo and GitHub Pages</a></li></ul></div></div></aside><footer><p>&copy; 2025 <a href=https://blog.denalena.de/><b>thoughts of a deer</b></a>.</p></footer></body></html>
