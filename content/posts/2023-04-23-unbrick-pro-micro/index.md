@@ -20,7 +20,7 @@ Maybe I'm getting old, but I just can't get it done in time. Not only do I have 
 
 I enabled more verbose output of the flashing step to maybe find a more useful error message, and indeed I got lucky: I spotted the exact command that is run to flash the compiled sketch. By just running that myself in a terminal, I was able to flash the board instantly after I put it into the bootloader mode by just hitting the enter key of my keyboard instead of competing in a speedrun point'n'click challenge against the clock.
 
-I published a repository containing a small script, with the needed `avrdude` configuration and an compiled empty sketch, in case someone needs this as well (I'm sure I will!): https://github.com/ledeniz/unbrick-promicro
+I published a repository containing a small script, with the needed `avrdude` configuration and an compiled empty sketch, in case someone needs this as well (I'm sure I will!): https://github.com/denalena/unbrick-promicro
 
 Also, now I'm thinking about switching over again to using [PlatformIO](https://platformio.org/) instead of the Arduino IDE. But apart from the weird behavior this blog post is about, for now it still works okay enough for me and I still have some bad memories from using PlatformIO in the past.
 
