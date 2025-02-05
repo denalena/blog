@@ -3,6 +3,8 @@ title: "Running a blog with Hugo and GitHub Pages"
 date: 2023-02-16
 ---
 
+> note: the source repository of this blog can be found at https://github.com/denalena/blog/
+
 When I started this blog, I wanted to make a post of how I set it up. The time has come! Although I have to say, I kind of forgot what my pain points were initially, but I remember that I tried using "pure" GitHub Pages and Jekyll, and with both of them I wasn't happy.
 
 What I wanted was:
